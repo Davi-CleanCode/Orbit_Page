@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* 8-bit Font Import */
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Press+Start+2P&display=swap');
 
 @layer utilities {
@@ -103,7 +102,6 @@
   75% { transform: scale(1.05) rotate(1deg); }
 }
 
-/* Particle effect */
 .particles {
   position: absolute;
   width: 100%;
@@ -126,7 +124,6 @@
   100% { transform: translateY(-100px) translateX(100px); opacity: 0; }
 }
 
-/* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
 }
@@ -144,12 +141,10 @@
   background: linear-gradient(135deg, #0891b2, #7c3aed);
 }
 
-/* Smooth scrolling */
 html {
   scroll-behavior: smooth;
 }
 
-/* Enhanced focus states */
 button:focus,
 input:focus {
   outline: none;
