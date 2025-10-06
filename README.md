@@ -32,31 +32,44 @@ Ferramentas de build / empacotamento (ex: Vite, Webpack, Next.js, etc.)
 
 Hospedagem via Vercel
 
-
 Instalação e Uso
 Instruções padrão para clonar e rodar localmente:
+
 # Clonar o repositório
+
 git clone <URL_DO_REPOSITÓRIO>
 cd orbit-page-five
 
 # Instalar dependências
+
 npm install
+
 # ou
+
 yarn install
 
 # Rodar em modo de desenvolvimento
+
 npm run dev
+
 # ou
+
 yarn dev
 
 # Construir para produção
+
 npm run build
+
 # ou
+
 yarn build
 
 # Iniciar servidor de produção
+
 npm start
+
 # ou
+
 yarn start
 
 Em seguida, abra no navegador:

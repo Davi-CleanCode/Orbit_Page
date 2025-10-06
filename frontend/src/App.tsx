@@ -16,7 +16,7 @@ import {
   Cpu,
   Wifi,
   Target,
-  Joystick
+  Joystick,
 } from 'lucide-react';
 
 function App() {
@@ -39,7 +39,7 @@ function App() {
       style={{
         left: `${Math.random() * 100}%`,
         animationDelay: `${Math.random() * 15}s`,
-        animationDuration: `${15 + Math.random() * 10}s`
+        animationDuration: `${15 + Math.random() * 10}s`,
       }}
     />
   ));
@@ -69,7 +69,8 @@ function App() {
         <div
           className="absolute inset-0 bg-cover bg-center opacity-30"
           style={{
-            backgroundImage: 'url(https://images.pexels.com/photos/586063/pexels-photo-586063.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop)'
+            backgroundImage:
+              'url(https://images.pexels.com/photos/586063/pexels-photo-586063.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop)',
           }}
         ></div>
 
@@ -98,11 +99,13 @@ function App() {
               <span className="text-purple-400 animate-neon-pulse"> [DEVS] </span>,
               <span className="text-pink-400 animate-neon-pulse"> [OTAKUS] </span>,
               <span className="text-purple-400 animate-neon-pulse"> [CINEFALOS] </span>,
-              <span className="text-green-400 animate-neon-pulse"> [AMANTES DE QUADRINHOS] </span>
-              e toda a comunidade geek que busca experiências únicas.
-              Orbit Conectando Universos, Criando Oportunidades
-              Na Orbit, acreditamos que a cultura geek é muito mais que entretenimento: é comunidade, inovação e mercado em expansão.
-              É por isso que criamos a Fandom Lab, uma plataforma que une fãs, criadores e empreendedores em um só lugar. Imagine um espaço que mistura a dinâmica das redes sociais com a força de um marketplace especializado no universo geek.
+              <span className="text-green-400 animate-neon-pulse"> [AMANTES DE QUADRINHOS] </span>e
+              toda a comunidade geek que busca experiências únicas. Orbit Conectando Universos,
+              Criando Oportunidades Na Orbit, acreditamos que a cultura geek é muito mais que
+              entretenimento: é comunidade, inovação e mercado em expansão. É por isso que criamos a
+              Fandom Lab, uma plataforma que une fãs, criadores e empreendedores em um só lugar.
+              Imagine um espaço que mistura a dinâmica das redes sociais com a força de um
+              marketplace especializado no universo geek.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 mb-16">
@@ -123,30 +126,41 @@ function App() {
                 { label: 'PLAYERS', value: '∞', color: 'text-green-400' },
                 { label: 'LEVEL', value: 'MAX', color: 'text-cyan-400' },
                 { label: 'XP', value: '999K+', color: 'text-purple-400' },
-                { label: 'STATUS', value: 'BETA', color: 'text-yellow-400' }
+                { label: 'STATUS', value: 'BETA', color: 'text-yellow-400' },
               ].map((stat, index) => (
-                <div key={index} className="bg-black/50 border border-gray-700 rounded-lg p-3 backdrop-blur-sm hover:border-cyan-400 transition-all duration-300">
+                <div
+                  key={index}
+                  className="bg-black/50 border border-gray-700 rounded-lg p-3 backdrop-blur-sm hover:border-cyan-400 transition-all duration-300"
+                >
                   <div className={`text-2xl font-bold ${stat.color} text-8bit animate-neon-pulse`}>
                     {stat.value}
                   </div>
-                  <div className="text-xs text-gray-400 text-8bit mt-1">
-                    {stat.label}
-                  </div>
+                  <div className="text-xs text-gray-400 text-8bit mt-1">{stat.label}</div>
                 </div>
               ))}
             </div>
           </div>
         </div>
 
-        <div className="absolute top-20 left-10 w-3 h-3 bg-cyan-400 animate-ping" style={{ clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0 100%)' }}></div>
-        <div className="absolute top-32 right-20 w-2 h-2 bg-purple-400 animate-pulse" style={{ clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0 100%)' }}></div>
-        <div className="absolute bottom-20 left-1/4 w-2 h-2 bg-pink-400 animate-bounce" style={{ clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0 100%)' }}></div>
+        <div
+          className="absolute top-20 left-10 w-3 h-3 bg-cyan-400 animate-ping"
+          style={{ clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0 100%)' }}
+        ></div>
+        <div
+          className="absolute top-32 right-20 w-2 h-2 bg-purple-400 animate-pulse"
+          style={{ clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0 100%)' }}
+        ></div>
+        <div
+          className="absolute bottom-20 left-1/4 w-2 h-2 bg-pink-400 animate-bounce"
+          style={{ clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0 100%)' }}
+        ></div>
       </div>
       <div className="py-20 relative z-10">
         <div
           className="absolute inset-0 bg-cover bg-center opacity-20"
           style={{
-            backgroundImage: 'url(https://images.pexels.com/photos/442576/pexels-photo-442576.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop)'
+            backgroundImage:
+              'url(https://images.pexels.com/photos/442576/pexels-photo-442576.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop)',
           }}
         ></div>
 
@@ -160,14 +174,16 @@ function App() {
             </h2>
             <p className="text-xl text-gray-400 max-w-3xl mx-auto text-cyber">
               Nossa plataforma está sendo desenvolvida pensando em cada membro da comunidade geek.
-              👾 Por que estar na Fandom Lab?
-              Para fãs: encontre sua tribo, discuta, compartilhe e viva sua paixão por animes, HQs, games, filmes e séries.
-              Para lojistas: exponha seus produtos diretamente para um público 100% geek — figures, camisetas, colecionáveis e muito mais.
-              Para criadores e devs: apresente seu jogo, app ou projeto open source para uma comunidade engajada, pronta para apoiar e consumir inovação.
+              👾 Por que estar na Fandom Lab? Para fãs: encontre sua tribo, discuta, compartilhe e
+              viva sua paixão por animes, HQs, games, filmes e séries. Para lojistas: exponha seus
+              produtos diretamente para um público 100% geek — figures, camisetas, colecionáveis e
+              muito mais. Para criadores e devs: apresente seu jogo, app ou projeto open source para
+              uma comunidade engajada, pronta para apoiar e consumir inovação.
             </p>
             <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
               <span className="text-8bit text-2xl md:text-3xl block mb-4 text-green-400 animate-glitch">
-                &gt; 💡 A Orbit não é só uma startup de tecnologia. É o motor de um ecossistema que transforma paixão em conexão e conexão em oportunidade.
+                &gt; 💡 A Orbit não é só uma startup de tecnologia. É o motor de um ecossistema que
+                transforma paixão em conexão e conexão em oportunidade.
               </span>
             </h1>
 
@@ -175,64 +191,70 @@ function App() {
               {[
                 {
                   icon: <Gamepad2 className="w-8 h-8 animate-pixel-dance" />,
-                  title: "GAMERS",
-                  desc: "Experiências únicas para verdadeiros jogadores",
-                  color: "from-red-500 to-orange-500",
-                  accent: "text-red-400"
+                  title: 'GAMERS',
+                  desc: 'Experiências únicas para verdadeiros jogadores',
+                  color: 'from-red-500 to-orange-500',
+                  accent: 'text-red-400',
                 },
                 {
                   icon: <Code className="w-8 h-8 animate-pixel-dance" />,
-                  title: "DEVELOPERS",
-                  desc: "Ferramentas e recursos para programadores",
-                  color: "from-green-500 to-emerald-500",
-                  accent: "text-green-400"
+                  title: 'DEVELOPERS',
+                  desc: 'Ferramentas e recursos para programadores',
+                  color: 'from-green-500 to-emerald-500',
+                  accent: 'text-green-400',
                 },
                 {
                   icon: <BookOpen className="w-8 h-8 animate-pixel-dance" />,
-                  title: "OTAKUS_&_MANGÁ",
-                  desc: "Conteúdo especial para fãs de anime e mangá",
-                  color: "from-pink-500 to-rose-500",
-                  accent: "text-pink-400"
+                  title: 'OTAKUS_&_MANGÁ',
+                  desc: 'Conteúdo especial para fãs de anime e mangá',
+                  color: 'from-pink-500 to-rose-500',
+                  accent: 'text-pink-400',
                 },
                 {
                   icon: <Monitor className="w-8 h-8 animate-pixel-dance" />,
-                  title: "CINÉFILOS",
-                  desc: "Para os amantes da sétima arte",
-                  color: "from-blue-500 to-indigo-500",
-                  accent: "text-blue-400"
+                  title: 'CINÉFILOS',
+                  desc: 'Para os amantes da sétima arte',
+                  color: 'from-blue-500 to-indigo-500',
+                  accent: 'text-blue-400',
                 },
                 {
                   icon: <Users className="w-8 h-8 animate-pixel-dance" />,
-                  title: "COMUNIDADE_GEEK",
-                  desc: "Conectando mentes criativas e curiosas",
-                  color: "from-purple-500 to-violet-500",
-                  accent: "text-purple-400"
+                  title: 'COMUNIDADE_GEEK',
+                  desc: 'Conectando mentes criativas e curiosas',
+                  color: 'from-purple-500 to-violet-500',
+                  accent: 'text-purple-400',
                 },
                 {
                   icon: <Star className="w-8 h-8 animate-pixel-dance" />,
-                  title: "ENTUSIASTAS",
-                  desc: "Para quem ama cultura pop e tecnologia",
-                  color: "from-cyan-500 to-teal-500",
-                  accent: "text-cyan-400"
-                }
+                  title: 'ENTUSIASTAS',
+                  desc: 'Para quem ama cultura pop e tecnologia',
+                  color: 'from-cyan-500 to-teal-500',
+                  accent: 'text-cyan-400',
+                },
               ].map((item, index) => (
                 <div
                   key={index}
                   className="group relative bg-black/70 backdrop-blur-sm border border-slate-700 rounded-lg p-6 hover:border-cyan-400/50 transition-all duration-500 hover:transform hover:scale-105 hover:animate-glitch"
                 >
-                  <div className="absolute inset-0 bg-gradient-to-br opacity-0 group-hover:opacity-20 rounded-lg transition-opacity duration-500"
-                    style={{ backgroundImage: `linear-gradient(135deg, var(--tw-gradient-from), var(--tw-gradient-to))` }}></div>
+                  <div
+                    className="absolute inset-0 bg-gradient-to-br opacity-0 group-hover:opacity-20 rounded-lg transition-opacity duration-500"
+                    style={{
+                      backgroundImage: `linear-gradient(135deg, var(--tw-gradient-from), var(--tw-gradient-to))`,
+                    }}
+                  ></div>
 
-                  <div className={`inline-flex p-3 rounded-lg bg-gradient-to-r ${item.color} mb-4 shadow-lg animate-neon-pulse`}>
+                  <div
+                    className={`inline-flex p-3 rounded-lg bg-gradient-to-r ${item.color} mb-4 shadow-lg animate-neon-pulse`}
+                  >
                     {item.icon}
                   </div>
 
-                  <h3 className={`text-lg font-bold mb-3 text-8bit ${item.accent} group-hover:animate-neon-pulse transition-colors`}>
+                  <h3
+                    className={`text-lg font-bold mb-3 text-8bit ${item.accent} group-hover:animate-neon-pulse transition-colors`}
+                  >
                     {item.title}
                   </h3>
-                  <p className="text-gray-400 leading-relaxed text-cyber text-sm">
-                    {item.desc}
-                  </p>
+                  <p className="text-gray-400 leading-relaxed text-cyber text-sm">{item.desc}</p>
 
                   <div className="absolute top-2 right-2 w-2 h-2 bg-cyan-400 opacity-50"></div>
                   <div className="absolute bottom-2 left-2 w-2 h-2 bg-purple-400 opacity-50"></div>
@@ -258,14 +280,20 @@ function App() {
                   &gt; COMPILING_EPIC.EXE
                 </span>
                 <span className="text-white text-cyber">Algo </span>
-                <span className="bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent animate-neon-pulse text-cyber">ÉPICO</span>
+                <span className="bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent animate-neon-pulse text-cyber">
+                  ÉPICO
+                </span>
                 <br />
-                <span className="text-8bit text-yellow-400 text-2xl md:text-3xl animate-glitch">Está Chegando</span>
+                <span className="text-8bit text-yellow-400 text-2xl md:text-3xl animate-glitch">
+                  Está Chegando
+                </span>
               </h2>
 
               <p className="text-xl text-gray-300 mb-12 leading-relaxed text-cyber">
-                Nossa equipe está trabalhando 24/7 para criar a plataforma definitiva para a comunidade geek.
-                <span className="text-cyan-400 animate-neon-pulse">[SEJA O PRIMEIRO]</span> a experimentar quando lançarmos!
+                Nossa equipe está trabalhando 24/7 para criar a plataforma definitiva para a
+                comunidade geek.
+                <span className="text-cyan-400 animate-neon-pulse">[SEJA O PRIMEIRO]</span> a
+                experimentar quando lançarmos!
               </p>
 
               <form onSubmit={handleSubmit} className="max-w-md mx-auto">
@@ -310,13 +338,22 @@ function App() {
               </div>
 
               <div className="flex items-center gap-6">
-                <a href="#" className="text-gray-400 hover:text-cyan-400 transition-colors p-2 hover:animate-pixel-dance">
+                <a
+                  href="#"
+                  className="text-gray-400 hover:text-cyan-400 transition-colors p-2 hover:animate-pixel-dance"
+                >
                   <Github className="w-6 h-6" />
                 </a>
-                <a href="#" className="text-gray-400 hover:text-cyan-400 transition-colors p-2 hover:animate-pixel-dance">
+                <a
+                  href="#"
+                  className="text-gray-400 hover:text-cyan-400 transition-colors p-2 hover:animate-pixel-dance"
+                >
                   <Twitter className="w-6 h-6" />
                 </a>
-                <a href="#" className="text-gray-400 hover:text-cyan-400 transition-colors p-2 hover:animate-pixel-dance">
+                <a
+                  href="#"
+                  className="text-gray-400 hover:text-cyan-400 transition-colors p-2 hover:animate-pixel-dance"
+                >
                   <Instagram className="w-6 h-6" />
                 </a>
               </div>

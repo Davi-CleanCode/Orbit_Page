@@ -1,4 +1,4 @@
-name: OrbitPage CI - Cointinuos integration 
+name: OrbitPage CI - Cointinuos integration
 
 on:
   release:
