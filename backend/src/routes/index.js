@@ -1,16 +1,19 @@
 import express from 'express';
-import { pool } from '../config/db.js';
+import formController from '../controllers/formController.js';
+import newsletterRoutes from './newsletterRoutes.js';
 
 const router = express.Router();
 
-router.get('/', async (req, res) => {
-  try {
-    const result = await pool.query('SELECT NOW()');
-    res.json({ message: 'API rodando com sucesso!', db_time: result.rows[0].now });
-  } catch (err) {
-    console.error(err);
-    res.status(500).json({ error: 'Erro ao conectar ao banco' });
-  }
+router.get('/health', (req, res) => {
+  res.json({
+    status: 'OK',
+    message: 'Orbit Page Backend está rodando!',
+    timestamp: new Date().toISOString()
+  });
 });
+
+router.post('/form/submit', formController.submit);
+router.get('/form/submissions', formController.getSubmissions);
+router.use('/newsletter', newsletterRoutes);
 
 export default router;

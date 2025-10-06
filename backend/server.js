@@ -1,28 +1,40 @@
+import express from 'express';
+import cors from 'cors';
 import dotenv from 'dotenv';
-dotenv.config();
-
-import app from './src/app.js';
-import pkg from 'pg';
-
-const { Pool } = pkg;
-
-const pool = new Pool({
-  user: process.env.DB_USER || 'postgres',
-  host: process.env.DB_HOST || 'localhost',
-  database: process.env.DB_NAME || 'orbit_db',
-  password: process.env.DB_PASSWORD || '2732',
-  port: process.env.DB_PORT || 2732,
-});
-
-pool
-  .connect()
-  .then(() => console.log('✅ Conectado ao PostgreSQL'))
-  .catch((err) => console.error('❌ Erro ao conectar ao PostgreSQL:', err));
 
 dotenv.config();
 
+const app = express();
 const PORT = process.env.PORT || 5000;
 
+app.use(cors());
+app.use(express.json());
+
+app.get('/api/health', (req, res) => {
+  res.json({
+    status: 'OK',
+    message: 'Backend funcionando!',
+    timestamp: new Date().toISOString()
+  });
+});
+
+app.post('/api/newsletter/subscribe', (req, res) => {
+  const { email, name } = req.body;
+
+  if (!email) {
+    return res.status(400).json({ error: 'Email é obrigatório' });
+  }
+
+  console.log('Novo inscrito:', { email, name });
+
+  res.json({
+    success: true,
+    message: 'Inscrito com sucesso!',
+    data: { email, name }
+  });
+});
+
 app.listen(PORT, () => {
-  console.log(`🚀 Servidor rodando em http://localhost:${PORT}`);
+  console.log(`🚀 Servidor rodando na porta ${PORT}`);
+  console.log(`📊 Health check: http://localhost:${PORT}/api/health`);
 });

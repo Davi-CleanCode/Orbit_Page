@@ -1,37 +1,68 @@
-import * as nodemailer from 'nodemailer';
+import nodemailer from 'nodemailer';
 
-const transporter = nodemailer.createTransport({
-  host: process.env.SMTP_HOST || 'smtp.exemplo.com',
-  port: process.env.SMTP_PORT || 587,
-  secure: false,
-  auth: {
-    user: process.env.SMTP_USER,
-    pass: process.env.SMTP_PASS,
-  },
-});
-
-const sendWelcomeEmail = async (recipientEmail) => {
-  const mailOptions = {
-    from: `"Orbit Page" <${process.env.SMTP_USER}>`, // Remetente
-    to: recipientEmail, // Destinatário
-    subject: 'Bem-vindo à Newsletter Orbit Page!',
-    html: `
-        <h1>Obrigado por se inscrever!</h1>
-        <p>Você agora receberá as últimas novidades da Orbit.</p>
-        <p>Atenciosamente, Equipe Orbit.</p>
-    `,
-  };
-
-  try {
-    let info = await transporter.sendMail(mailOptions);
-    console.log(`E-mail de boas-vindas enviado para ${recipientEmail}. ID: ${info.messageId}`);
-    return true;
-  } catch (error) {
-    console.error('Erro ao enviar e-mail:', error);
-    return false;
+class EmailService {
+  constructor() {
+    this.transporter = nodemailer.createTransporter({
+      host: process.env.SMTP_HOST || 'smtp.gmail.com',
+      port: process.env.SMTP_PORT || 587,
+      secure: false,
+      auth: {
+        user: process.env.SMTP_USER,
+        pass: process.env.SMTP_PASS,
+      },
+    });
   }
-};
 
-export default {
-  sendWelcomeEmail,
-};
+  async sendWelcomeEmail(subscriber) {
+    const mailOptions = {
+      from: process.env.SMTP_FROM || '"Orbit Page" <noreply@orbitpage.com>',
+      to: subscriber.email,
+      subject: 'Bem-vindo à Orbit Page! 🚀',
+      html: `
+        <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
+          <h2 style="color: #6366f1;">Bem-vindo à nossa comunidade!</h2>
+          <p>Olá <strong>${subscriber.name}</strong>,</p>
+          <p>Obrigado por se inscrever na Orbit Page. Você agora receberá nossas atualizações e novidades.</p>
+          <p>Fique ligado para conteúdos incríveis! 🎉</p>
+          <hr>
+          <p style="color: #6b7280; font-size: 12px;">
+            Caso queira cancelar sua inscrição, <a href="${process.env.APP_URL}/unsubscribe?email=${subscriber.email}">clique aqui</a>.
+          </p>
+        </div>
+      `,
+    };
+
+    try {
+      await this.transporter.sendMail(mailOptions);
+      console.log('✅ Email de boas-vindas enviado para:', subscriber.email);
+    } catch (error) {
+      console.error('❌ Erro ao enviar email:', error);
+    }
+  }
+
+  async sendNotification(formData) {
+    const mailOptions = {
+      from: process.env.SMTP_FROM,
+      to: process.env.ADMIN_EMAIL,
+      subject: 'Nova mensagem do formulário - Orbit Page',
+      html: `
+        <div style="font-family: Arial, sans-serif;">
+          <h3>Nova mensagem recebida:</h3>
+          <p><strong>Nome:</strong> ${formData.name}</p>
+          <p><strong>Email:</strong> ${formData.email}</p>
+          <p><strong>Mensagem:</strong> ${formData.message}</p>
+          <p><strong>Data:</strong> ${new Date().toLocaleString('pt-BR')}</p>
+        </div>
+      `,
+    };
+
+    try {
+      await this.transporter.sendMail(mailOptions);
+      console.log('✅ Notificação enviada para admin');
+    } catch (error) {
+      console.error('❌ Erro ao enviar notificação:', error);
+    }
+  }
+}
+
+export default new EmailService();

@@ -1,31 +1,86 @@
-import SubscriberModel from '../models/SubscriberModel.js';
+import { SubscriberModel } from '../models/SubscriberModel.js';
 import EmailService from '../services/EmailService.js';
 
-const subscribe = async (req, res) => {
-  const { email } = req.body;
+class NewsletterController {
+  async subscribe(req, res) {
+    try {
+      const { email, name } = req.body;
 
-  if (!email) {
-    return res.status(400).json({ error: "O campo 'email' é obrigatório." });
-  }
+      if (!email || !email.includes('@')) {
+        return res.status(400).json({
+          success: false,
+          message: 'Email inválido'
+        });
+      }
 
-  try {
-    const newSubscriber = await SubscriberModel.addSubscriber(email);
+      const existingSubscriber = await SubscriberModel.findByEmail(email);
+      if (existingSubscriber) {
+        return res.status(409).json({
+          success: false,
+          message: 'Este email já está inscrito'
+        });
+      }
 
-    EmailService.sendWelcomeEmail(email);
+      const subscriber = await SubscriberModel.create({ email, name });
+      EmailService.sendWelcomeEmail(subscriber);
 
-    return res.status(201).json({
-      message: 'Inscrição realizada com sucesso!',
-      subscriber: newSubscriber,
-    });
-  } catch (error) {
-    if (error.message.includes('já está inscrito')) {
-      return res.status(409).json({ error: error.message });
+      res.status(201).json({
+        success: true,
+        message: 'Inscrição realizada com sucesso!',
+        data: subscriber
+      });
+
+    } catch (error) {
+      console.error('❌ Erro no subscribe:', error);
+      res.status(500).json({
+        success: false,
+        message: 'Erro interno do servidor'
+      });
     }
-    console.error('Erro no processo de inscrição:', error);
-    return res.status(500).json({ error: 'Erro interno do servidor.' });
   }
-};
 
-export default {
-  subscribe,
-};
+  async unsubscribe(req, res) {
+    try {
+      const { email } = req.body;
+
+      const subscriber = await SubscriberModel.unsubscribe(email);
+
+      if (!subscriber) {
+        return res.status(404).json({
+          success: false,
+          message: 'Email não encontrado'
+        });
+      }
+
+      res.json({
+        success: true,
+        message: 'Inscrição cancelada com sucesso'
+      });
+
+    } catch (error) {
+      console.error('❌ Erro no unsubscribe:', error);
+      res.status(500).json({
+        success: false,
+        message: 'Erro interno do servidor'
+      });
+    }
+  }
+
+  async getSubscribers(req, res) {
+    try {
+      const subscribers = await SubscriberModel.findAll();
+      res.json({
+        success: true,
+        data: subscribers
+      });
+    } catch (error) {
+      console.error('❌ Erro ao buscar subscribers:', error);
+      res.status(500).json({
+        success: false,
+        message: 'Erro interno do servidor'
+      });
+    }
+  }
+}
+
+export default new NewsletterController();
