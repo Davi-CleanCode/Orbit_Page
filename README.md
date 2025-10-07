@@ -74,3 +74,5 @@ yarn start
 
 Em seguida, abra no navegador:
 http://localhost:3000
+
+---
