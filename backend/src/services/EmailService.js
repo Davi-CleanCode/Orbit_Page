@@ -2,15 +2,25 @@ import nodemailer from 'nodemailer';
 
 class EmailService {
   constructor() {
-    this.transporter = nodemailer.createTransporter({
-      host: process.env.SMTP_HOST || 'smtp.gmail.com',
-      port: process.env.SMTP_PORT || 587,
-      secure: false,
-      auth: {
-        user: process.env.SMTP_USER,
-        pass: process.env.SMTP_PASS,
-      },
-    });
+    if (process.env.SMTP_USER && process.env.SMTP_PASS) {
+      this.transporter = nodemailer.createTransport({
+        host: process.env.SMTP_HOST || 'smtp.gmail.com',
+        port: Number(process.env.SMTP_PORT) || 587,
+        secure: false,
+        auth: {
+          user: process.env.SMTP_USER,
+          pass: process.env.SMTP_PASS,
+        },
+      });
+    } else {
+      this.transporter = {
+        sendMail: async (mailOptions) => {
+          console.log('--- email mock ---');
+          console.log(mailOptions);
+          console.log('--- end mock ---');
+        },
+      };
+    }
   }
 
   async sendWelcomeEmail(subscriber) {
