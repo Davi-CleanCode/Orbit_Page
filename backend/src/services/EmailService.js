@@ -1,3 +1,11 @@
+/**
+ * SERVICE: Envio de Emails
+ * -------------------------------------
+ * Responsável por toda lógica de envio de emails.
+ * Chamado pelo newsletterController ou outros serviços.
+ * pode alterar templates, provedores e configurações.
+ */
+
 import nodemailer from 'nodemailer';
 
 class EmailService {

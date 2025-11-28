@@ -1,3 +1,15 @@
+/**
+ * FRONTEND — APP PRINCIPAL
+ * ---------------------------------------------------
+ * Júlia,
+ * Este é o componente raiz da aplicação React.
+ * Aqui centralizamos as seções principais e montamos
+ * a estrutura visual base da interface.
+ *
+ * Você só altera este arquivo quando formos adicionar
+ * novas seções, containers ou mudar a estrutura geral da página.
+ */
+
 import React, { useState } from 'react';
 import OrbitSlider from "./components/OrbitSlider"; // nome atualizado
 import {

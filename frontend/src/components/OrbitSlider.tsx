@@ -1,3 +1,15 @@
+/**
+ * COMPONENTE: OrbitSlider
+ * ---------------------------------------------------
+ * Júlia,
+ * Este componente é o slider principal da landing page.
+ * Ele controla animações, transições e comportamento do slider.
+ *
+ * Você pode ajustar velocidade, lógica de navegação,
+ * visual do slider ou adicionar novos elementos visuais.
+ * O carrosel esta aqui
+ */
+
 import React, { useEffect, useRef, useState } from "react";
 import "./Slider.css";
 

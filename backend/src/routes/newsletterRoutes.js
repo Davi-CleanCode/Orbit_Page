@@ -1,3 +1,11 @@
+/**
+ * ROTAS: Newsletter
+ * -------------------------------------
+ * Contém todas as rotas relacionadas à newsletter.
+ * Cada rota chama um controller correspondente.
+ * vcoe pode adicionar novas rotas se surgirem novas funções.
+ */
+
 import express from 'express';
 import newsletterController from '../controllers/newsletterController.js';
 

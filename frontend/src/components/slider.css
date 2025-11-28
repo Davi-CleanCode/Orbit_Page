@@ -1,3 +1,12 @@
+/*
+ * ESTILOS DO COMPONENTE ORBITSLIDER
+ * ---------------------------------------------------
+ * Júlia,
+ * Aqui ficam apenas os estilos específicos do slider.
+ * É onde você ajusta cor, animação, espaçamento e layout
+ * sem afetar o restante do site.
+ */
+
 .slider-container {
   position: relative;
   width: 80vw;

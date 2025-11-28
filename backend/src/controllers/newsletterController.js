@@ -1,3 +1,11 @@
+/**
+ * CONTROLLER: Newsletter
+ * -------------------------------------
+ * Gerencia assinaturas, remoções e consultas relacionadas à newsletter.
+ * Faz a ponte entre rotas e o NewsletterService.
+ * voce pode ajustar regras, validações e retornos.
+ */
+
 import { SubscriberModel } from '../models/SubscriberModel.js';
 import EmailService from '../services/EmailService.js';
 

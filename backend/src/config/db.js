@@ -1,3 +1,12 @@
+/**
+ * CONFIGURAÇÃO DO BANCO DE DADOS
+ * -------------------------------------
+ * Este arquivo cria e exporta a conexão com o banco.
+ * Toda a aplicação utiliza esta conexão.
+ * Julia só deve alterar caso mudemos o banco,
+ * credenciais ou estrutura de conexão.
+ */
+
 import pkg from 'pg';
 import dotenv from 'dotenv';
 dotenv.config();

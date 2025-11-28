@@ -1,3 +1,11 @@
+/**
+ * MODEL: Subscriber
+ * -------------------------------------
+ * Representa o modelo do assinante da newsletter.
+ * Faz o mapeamento direto da tabela no banco.
+ * Julia adicione novos campos, se forem criados no banco.
+ */
+
 import { pool } from '../config/db.js';
 
 export class SubscriberModel {

@@ -1,3 +1,11 @@
+/**
+ * ROTAS PRINCIPAIS
+ * -------------------------------------
+ * Arquivo que agrupa e exporta todas as rotas do backend.
+ * Útil para organizar a estrutura geral das rotas.
+ * voce pode incluir novas rotas aqui.
+ */
+
 import express from 'express';
 import formController from '../controllers/formController.js';
 import newsletterRoutes from './newsletterRoutes.js';

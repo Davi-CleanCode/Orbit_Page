@@ -1,3 +1,11 @@
+/**
+ * APLICAÇÃO EXPRESS PRINCIPAL
+ * -------------------------------------
+ * Configura middlewares, rotas e integração com o servidor.
+ * É o coração da aplicação.
+ *  mexe aqui apenas se precisar adicionar middlewares.
+ */
+
 import express from 'express';
 import cors from 'cors';
 import helmet from 'helmet';

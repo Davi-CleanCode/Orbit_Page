@@ -1,3 +1,6 @@
+##Workflow do git para pipeline, e CI/CD serve para monitorar log e ver quebras de codigos e informações do projeto
+##não é nescessario mexer aqui agora, mas seria legal depois de pronto vir aqui e concertar o workflow pois ele está quebrado verificar no github
+##fazer um novo assim que subir para o gitops e ter um novo ciclo de pipelie, tentar usar junto ao docker ou azure.
 name: OrbitPage CI/CD
 
 on:

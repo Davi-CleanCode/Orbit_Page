@@ -1,0 +1,5 @@
+-- BANCO DE DADOS: SCRIPT INICIAL
+-- -------------------------------------
+-- Contém a criação das tabelas necessárias para o sistema.
+-- Este arquivo é usado apenas para inicializar o banco.
+-- Julia só deve alterar se novas tabelas forem criadas.

@@ -1,3 +1,14 @@
+/*
+ * ESTILOS GLOBAIS DO PROJETO
+ * ---------------------------------------------------
+ * Júlia,
+ * Aqui ficam estilos globais, resets, fontes e ajustes 
+ * gerais que afetam toda a aplicação.
+ *
+ * Você pode modificar para melhorar tipografia, 
+ * cores base, espaçamentos e classes utilitárias.
+ */
+
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Press+Start+2P&display=swap');
 
 @tailwind base;

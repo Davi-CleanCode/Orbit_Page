@@ -1,3 +1,10 @@
+/**
+ * CONFIGURAÇÃO DE API EXTERNA
+ * -------------------------------------
+ * Arquivo para chamadas a APIs externas, se necessário.
+ * Julia só mexer se precisarmos consumir novos serviços externos.
+ */
+
 const API_URL = "https://orbit-page-backend.vercel.app/api";
 
 export async function sendForm(data) {

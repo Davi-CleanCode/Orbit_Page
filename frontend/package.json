@@ -1,5 +1,4 @@
-{
-  "name": "orbit-page",
+{ "name": "orbit-page",
   "type": "module",
   "scripts": {
     "dev": "vite",

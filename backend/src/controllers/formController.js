@@ -1,3 +1,11 @@
+/**
+ * CONTROLLER: Formulário
+ * -------------------------------------
+ * Controla o fluxo de dados enviados pelos formulários da aplicação.
+ * Recebe as requisições, valida informações e chama os services.
+ * voce pode alterar validações ou regras de negócio.
+ */
+
 import { pool } from '../config/db.js';
 import EmailService from '../services/EmailService.js';
 

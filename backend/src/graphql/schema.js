@@ -1,3 +1,10 @@
+/**
+ * GRAPHQL SCHEMA
+ * -------------------------------------
+ * Define o schema GraphQL (queries, mutations e tipos).
+ * Julia por favor criar novas queries e mutations se necessário.
+ */
+
 import { buildSchema } from 'graphql';
 import { SubscriberModel } from '../models/SubscriberModel.js';
 import { pool } from '../config/db.js';
